@@ -18,12 +18,11 @@ struct AppTabView: View {
                 .tabItem {
                     Label("Locations", systemImage: "building")
                 }
-            ProfileView()
+            LocationDetailView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
         }
-        .accentColor(.brandPrimary)
     }
 }
 

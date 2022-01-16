@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0734A758277FC78C009E9970 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734A757277FC78C009E9970 /* LocationDetailView.swift */; };
 		07BEE9B3277C3043001EEFB9 /* DubDubGrubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BEE9B2277C3043001EEFB9 /* DubDubGrubApp.swift */; };
 		07BEE9B7277C3044001EEFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BEE9B6277C3044001EEFB9 /* Assets.xcassets */; };
 		07BEE9BA277C3044001EEFB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BEE9B9277C3044001EEFB9 /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0734A757277FC78C009E9970 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		07BEE9AF277C3043001EEFB9 /* DubDubGrub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DubDubGrub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BEE9B2277C3043001EEFB9 /* DubDubGrubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DubDubGrubApp.swift; sourceTree = "<group>"; };
 		07BEE9B6277C3044001EEFB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				07BEE9C8277C3670001EEFB9 /* LocationMapView.swift */,
 				07BEE9CA277C3691001EEFB9 /* LocationListView.swift */,
 				07BEE9CC277C369D001EEFB9 /* ProfileView.swift */,
+				0734A757277FC78C009E9970 /* LocationDetailView.swift */,
 			);
 			path = DubDubGrub;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				07BEE9B3277C3043001EEFB9 /* DubDubGrubApp.swift in Sources */,
 				07BEE9C9277C3670001EEFB9 /* LocationMapView.swift in Sources */,
 				07BEE9CB277C3691001EEFB9 /* LocationListView.swift in Sources */,
+				0734A758277FC78C009E9970 /* LocationDetailView.swift in Sources */,
 				07BEE9C7277C35F2001EEFB9 /* AppTabView.swift in Sources */,
 				07BEE9CD277C369D001EEFB9 /* ProfileView.swift in Sources */,
 				07BEE9C5277C3561001EEFB9 /* Color+Ext.swift in Sources */,
