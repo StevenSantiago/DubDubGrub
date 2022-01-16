@@ -9,24 +9,25 @@ import SwiftUI
 
 struct LocationDetailView: View {
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                Image("default-banner-asset")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 120)
-                
-                HStack {
-                    Label("123 Main Street", systemImage: "mappin.and.ellipse")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                    Spacer()
-                }
-                .padding(.horizontal)
-                
+        VStack(spacing: 16) {
+            Image("default-banner-asset")
+                .resizable()
+                .scaledToFill()
+                .frame(height: 120)
+            
+            HStack {
+                Label("123 Main Street", systemImage: "mappin.and.ellipse")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
+            .padding(.horizontal)
+            
+            ScrollView {
                 Text("Some Description")
                     .lineLimit(3)
                     .minimumScaleFactor(0.75)
+                    .frame(height: 70)
                     .padding(.horizontal)
                 
                 
@@ -57,8 +58,8 @@ struct LocationDetailView: View {
                         } label: {
                             LocationActionButton(color: .brandPrimary, imageName: "person.fill.xmark")
                         }
-
-                    
+                        
+                        
                     }
                 }
                 .padding(.horizontal)
@@ -73,13 +74,13 @@ struct LocationDetailView: View {
                     FirstNameAvatarView(firstName: "Kelly")
                     FirstNameAvatarView(firstName: "Kelly")
                 })
-                
-                Spacer()
-                
             }
-            .navigationTitle("Location Name")
-            .navigationBarTitleDisplayMode(.inline)
+        
+            Spacer()
+            
         }
+        .navigationTitle("Location Name")
+        .navigationBarTitleDisplayMode(.inline)
         
     }
     
@@ -90,7 +91,9 @@ struct LocationDetailView: View {
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView {
         LocationDetailView()
+       }
     }
 }
 
