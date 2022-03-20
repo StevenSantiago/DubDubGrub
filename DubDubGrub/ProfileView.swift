@@ -16,33 +16,21 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color(.secondarySystemBackground)
-                    .frame(height:130)
-                    .cornerRadius(12)
-                    .padding(.horizontal)
+                NameBackgroundView()
                 
                 HStack(spacing: 12) {
                     ZStack {
                         AvatarView(size: 84)
-                        Image(systemName: "square.and.pencil")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 14, height: 14)
-                            .foregroundColor(.white)
-                            .offset(y: 30)
+                        EditImage()
                     }
                     .padding(.leading, 12)
                     
                     VStack(spacing: 1) {
                         TextField("First Name", text: $firstName)
-                            .font(.system(size: 32, weight: .bold))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.75)
+                            .profileNameStyle()
                         
                         TextField("Last Name", text: $lastName)
-                            .font(.system(size: 32, weight: .bold))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.75)
+                            .profileNameStyle()
                         
                         TextField("Company Name", text: $companyName)
                             .lineLimit(1)
@@ -54,19 +42,7 @@ struct ProfileView: View {
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Bio: ")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                +
-                Text("\(100 - bio.count) ")
-                    .bold()
-                    .font(.callout)
-                    .foregroundColor(bio.count <= 100 ? .brandPrimary : Color(.systemPink))
-                +
-                Text("characters remain")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                
+                CharactersRemainView(bio: bio.count)
                 TextEditor(text: $bio)
                     .frame(height: 100)
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1))
@@ -78,12 +54,7 @@ struct ProfileView: View {
             Button {
                 
             } label: {
-                Text("Create Profile")
-                    .bold()
-                    .frame(width: 280, height: 44)
-                    .background(Color.brandPrimary)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                DDGButton(title: "Create Profile")
             }
             .padding()
         }
@@ -96,5 +67,43 @@ struct ProfileView_Previews: PreviewProvider {
         NavigationView {
             ProfileView()
         }
+    }
+}
+
+struct NameBackgroundView: View {
+    var body: some View {
+        Color(.secondarySystemBackground)
+            .frame(height:130)
+            .cornerRadius(12)
+            .padding(.horizontal)
+    }
+}
+
+struct EditImage: View {
+    var body: some View {
+        Image(systemName: "square.and.pencil")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 14, height: 14)
+            .foregroundColor(.white)
+            .offset(y: 30)
+    }
+}
+
+struct CharactersRemainView: View {
+    var bio: Int
+    var body: some View {
+        Text("Bio: ")
+            .font(.callout)
+            .foregroundColor(.secondary)
+        +
+        Text("\(100 - bio) ")
+            .bold()
+            .font(.callout)
+            .foregroundColor(bio <= 100 ? .brandPrimary : Color(.systemPink))
+        +
+        Text("characters remain")
+            .font(.callout)
+            .foregroundColor(.secondary)
     }
 }

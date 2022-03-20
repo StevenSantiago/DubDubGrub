@@ -28,17 +28,6 @@ struct LocationListView_Previews: PreviewProvider {
     }
 }
 
-struct AvatarView: View {
-    var size: CGFloat
-    var body: some View {
-        Image("default-avatar")
-            .resizable()
-            .scaledToFit()
-            .frame(width: size, height: size)
-            .clipShape(Circle())
-    }
-}
-
 struct LocationCell: View {
     var body: some View {
         HStack {

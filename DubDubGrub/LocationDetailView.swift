@@ -10,25 +10,16 @@ import SwiftUI
 struct LocationDetailView: View {
     var body: some View {
         VStack(spacing: 16) {
-            Image("default-banner-asset")
-                .resizable()
-                .scaledToFill()
-                .frame(height: 120)
+            BannerImageView(imageName: "default-banner-asset")
             
             HStack {
-                Label("123 Main Street", systemImage: "mappin.and.ellipse")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                AddressView(address: "123 Main Street")
                 Spacer()
             }
             .padding(.horizontal)
             
             ScrollView {
-                Text("Some Description")
-                    .lineLimit(3)
-                    .minimumScaleFactor(0.75)
-                    .frame(height: 70)
-                    .padding(.horizontal)
+                DescriptionView(description: "Some Description")
                 
                 
                 ZStack {
@@ -125,5 +116,35 @@ struct FirstNameAvatarView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
         }
+    }
+}
+
+struct BannerImageView: View {
+    var imageName: String
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFill()
+            .frame(height: 120)
+    }
+}
+
+struct AddressView: View {
+    var address: String
+    var body: some View {
+        Label(address, systemImage: "mappin.and.ellipse")
+            .font(.caption)
+            .foregroundColor(.secondary)
+    }
+}
+
+struct DescriptionView: View {
+    var description: String
+    var body: some View {
+        Text(description)
+            .lineLimit(3)
+            .minimumScaleFactor(0.75)
+            .frame(height: 70)
+            .padding(.horizontal)
     }
 }
