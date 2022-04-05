@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct LocationDetailView: View {
+    var location: DDGLocation
     var body: some View {
         VStack(spacing: 16) {
             BannerImageView(imageName: "default-banner-asset")
             
             HStack {
-                AddressView(address: "123 Main Street")
+                AddressView(address: location.address ?? "N/A")
                 Spacer()
             }
             .padding(.horizontal)
             
             ScrollView {
-                DescriptionView(description: "Some Description")
+                DescriptionView(description: location.description ?? "N/A")
                 
                 
                 ZStack {
@@ -34,7 +35,7 @@ struct LocationDetailView: View {
                             LocationActionButton(color: .brandPrimary, imageName: "location.fill")
                         }
                         
-                        Link(destination: URL(string: "https://www.apple.com")!) {
+                        Link(destination: URL(string: location.websiteURL ?? "https://www.apple.com")!) {
                             LocationActionButton(color: .brandPrimary, imageName: "globe")
                         }
                         
@@ -70,7 +71,7 @@ struct LocationDetailView: View {
             Spacer()
             
         }
-        .navigationTitle("Location Name")
+        .navigationTitle(location.name ?? "N/A")
         .navigationBarTitleDisplayMode(.inline)
         
     }
@@ -83,7 +84,7 @@ struct LocationDetailView: View {
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        LocationDetailView()
+            LocationDetailView(location: DDGLocation(record: MockData.location))
        }
     }
 }

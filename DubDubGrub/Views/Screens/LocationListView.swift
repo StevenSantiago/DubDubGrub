@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct LocationListView: View {
+    @State private var locations = [DDGLocation(record: MockData.location)]
     var body: some View {
         NavigationView {
             List {
-                ForEach(0..<10) { item in
-                    NavigationLink(destination: LocationDetailView()) {
-                        LocationCell()
+                ForEach(locations, id: \.ckRecordID) { location in
+                    NavigationLink(destination: LocationDetailView(location: location)) {
+                        LocationCell(location: location)
                     }
                 }
             }
@@ -29,6 +30,8 @@ struct LocationListView_Previews: PreviewProvider {
 }
 
 struct LocationCell: View {
+    var location: DDGLocation
+    
     var body: some View {
         HStack {
             Image("default-square-asset")
@@ -39,7 +42,7 @@ struct LocationCell: View {
                 .padding(.vertical, 8)
         
             VStack(alignment: .leading) {
-                Text("Test Location Name")
+                Text(location.name ?? "N/A")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .lineLimit(1)
