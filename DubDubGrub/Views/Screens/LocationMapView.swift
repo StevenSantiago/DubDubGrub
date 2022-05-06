@@ -5,11 +5,14 @@
 //  Created by Steven Santiago on 12/28/21.
 //
 
+import Combine
 import SwiftUI
 import MapKit
 
 struct LocationMapView: View {
     
+   
+    @State private var cancellables = Set<AnyCancellable>()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.331516, longitude: -121.891054),
                                                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     var body: some View {
@@ -22,6 +25,15 @@ struct LocationMapView: View {
                 Spacer()
                 
             }
+        }.onAppear {
+            CloudKitManager.getLocations().sink { completion in
+                //Possibly dont need this completion
+                let message = try? completion.error().localizedDescription
+                print(message ?? "String")
+            } receiveValue: { location in
+                print(location)
+            }.store(in: &cancellables)
+
         }
     }
 }
