@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		070C204A2824FF1100800FEF /* Utility+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070C20492824FF1100800FEF /* Utility+Ext.swift */; };
+		070C204C2825003F00800FEF /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070C204B2825003F00800FEF /* AlertItem.swift */; };
 		0734A758277FC78C009E9970 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734A757277FC78C009E9970 /* LocationDetailView.swift */; };
 		078E58F527E6CB2C00580447 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078E58F427E6CB2C00580447 /* AvatarView.swift */; };
 		078E58F727E6CE1800580447 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078E58F627E6CE1800580447 /* CustomModifiers.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		070C20492824FF1100800FEF /* Utility+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utility+Ext.swift"; sourceTree = "<group>"; };
+		070C204B2825003F00800FEF /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		0734A757277FC78C009E9970 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		078E58F427E6CB2C00580447 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		078E58F627E6CE1800580447 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		078E58FC27E6D10100580447 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				070C204B2825003F00800FEF /* AlertItem.swift */,
 				07BEE9C4277C3561001EEFB9 /* Color+Ext.swift */,
 				078E58F827E6CE4300580447 /* View+Ext.swift */,
 				070C20492824FF1100800FEF /* Utility+Ext.swift */,
@@ -251,6 +254,7 @@
 				078E58F927E6CE4300580447 /* View+Ext.swift in Sources */,
 				078E590227E70BD000580447 /* DDGLocation.swift in Sources */,
 				079B563727FBFDFD00E19A20 /* MockData.swift in Sources */,
+				070C204C2825003F00800FEF /* AlertItem.swift in Sources */,
 				07BEE9CB277C3691001EEFB9 /* LocationListView.swift in Sources */,
 				079B563C27FC04D300E19A20 /* Constants.swift in Sources */,
 				0734A758277FC78C009E9970 /* LocationDetailView.swift in Sources */,
