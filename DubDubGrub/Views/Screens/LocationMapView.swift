@@ -33,8 +33,9 @@ struct LocationMapView: View {
         })
         .onAppear {
             CloudKitManager.getLocations().sink { completion in
-                let message = try? completion.error().localizedDescription
-                if message != nil {alertItem = AlertContext.unableToGetLocations}
+                if case .failure(_) = completion {
+                    alertItem = AlertContext.unableToGetLocations
+                }
             } receiveValue: { location in
                 print(location)
             }.store(in: &cancellables)
